@@ -6,6 +6,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { format } from "date-fns";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 function Header() {
     const [destination, setDestination] = useState("");
@@ -23,6 +24,8 @@ function Header() {
         }
     ]);
     const [openDate, setOpenDate] = useState(false)
+    const navigate = useNavigate();
+    // const [serchParams, setSearchParams] = useSearchParams();
     const handleOptions = (name, operation) => {
         setOptions((prev) => {
             return {
@@ -31,7 +34,18 @@ function Header() {
             }
         })
     }
-   
+    const handleSearch = () => {
+        const encodedParams = createSearchParams({
+            date: JSON.stringify(date),
+            destination,
+            options: JSON.stringify(options)
+        })
+        navigate({
+            pathname: "/hotels",
+            search: encodedParams.toString()
+        })
+        // how set search params=> setSearchParams(encodedParams)
+    }
     return (
         <div>
             <div className="header">
@@ -57,16 +71,16 @@ function Header() {
 
                         {
                             openDate && (
-                               
-                                < DateRange
-                             
-                        onChange={(item) => setDate([item.selection])}
-                        ranges={date}
-                        className="date"
-                        minDate={new Date()}
-                        moveRangeOnFirstSelection={true} />
 
-                        )
+                                < DateRange
+
+                                    onChange={(item) => setDate([item.selection])}
+                                    ranges={date}
+                                    className="date"
+                                    minDate={new Date()}
+                                    moveRangeOnFirstSelection={true} />
+
+                            )
 
                         }
 
@@ -82,7 +96,7 @@ function Header() {
                         <span className="seperator"></span>
                     </div>
                     <div className="headerSearchItem">
-                        <button className="headerSearchBtn">
+                        <button onClick={handleSearch} className="headerSearchBtn">
                             <HiSearch className=" headerIcon" />
                         </button>
                     </div>
