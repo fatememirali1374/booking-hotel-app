@@ -3,7 +3,7 @@ import { LoaderIcon } from "react-hot-toast"
 
 function Loader() {
     return (
-        <divp style={{
+        <div style={{
             color: "var(--primary-600)", display: "flex",
             alignItems: "center",
             gap: "1rem",
@@ -11,7 +11,7 @@ function Loader() {
         }}>
             <p>loding data...</p>
             <LoaderIcon style={{ width: "1.3rem", height: "1.3rem" }} />
-        </divp>
+        </div>
     )
 }
 
