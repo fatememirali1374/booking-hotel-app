@@ -1,14 +1,13 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from "react-leaflet"
 import { useEffect, useState } from "react"
-import { useNavigate, useSearchParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import useGeoLocation from "../../hooks/useGeoLocation"
+import useUrlLocation from "../../hooks/useUrlLocation"
 
-function Map({markerLocations}) {
-    
+function Map({ markerLocations }) {
+
     const [mapCenter, setMapCenter] = useState([50, 5])
-    const [searchParams, setSearchParams] = useSearchParams();
-    const lat = searchParams.get("lat");
-    const lng = searchParams.get("lng")
+    const [lat, lng] = useUrlLocation()
 
     const { isLoading: isLoadingPosition,
         position: geolocationPosition,
@@ -38,11 +37,13 @@ function Map({markerLocations}) {
                 <DetectClick />
                 <ChangeCenter position={mapCenter} />
                 {markerLocations.map((item) => {
-                    <Marker key={item.id} position={[item.latitude, item.longitude]}>
-                        <Popup>
-                            {item.host_location}
-                        </Popup>
-                    </Marker>
+                    return (
+                        <Marker key={item.id} position={[item.latitude, item.longitude]}>
+                            <Popup>
+                                {item.host_location}
+                            </Popup>
+                        </Marker>
+                    )
                 })}
 
             </MapContainer>
@@ -61,7 +62,7 @@ const ChangeCenter = ({ position }) => {
 const DetectClick = () => {
     const navigate = useNavigate()
     useMapEvent({
-        click: e => navigate(`/bookmark?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
+        click: e => navigate(`/bookmark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
     })
     return null
 }
