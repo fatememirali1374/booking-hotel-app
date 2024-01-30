@@ -1343,31 +1343,31 @@
       "id": 4
     },
     {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
+      "cityName": "Amsterdam",
+      "country": "Netherlands (Kingdom of the)",
+      "countryCode": "NL",
+      "latitude": "52.34087232854124",
+      "longitude": "4.90332088642318",
+      "host_location": "Amsterdam Netherlands (Kingdom of the)",
       "id": 5
     },
     {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
-      "id": 7
+      "cityName": "Hrinova",
+      "country": "Slovakia",
+      "countryCode": "SK",
+      "latitude": "48.59194624298867",
+      "longitude": "19.60858304951715",
+      "host_location": "Hrinova Slovakia",
+      "id": 6
     },
     {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
-      "id": 8
+      "cityName": "Qom",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.63285486368697",
+      "longitude": "50.85090956604001",
+      "host_location": "Qom Iran (Islamic Republic of)",
+      "id": 7
     }
   ]
 }
