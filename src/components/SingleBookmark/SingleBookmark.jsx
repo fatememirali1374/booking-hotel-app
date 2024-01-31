@@ -20,9 +20,10 @@ function SingleBookmark() {
             <div >
                 <h2 style={{ marginBottom: "1rem" }}>{currentBookmark.cityName}</h2>
                 <div style={{ marginBottom: "1rem" }} className="bookmarkItem">
+                    <div>
+                        <strong>{currentBookmark.cityName}</strong>  &nbsp;_  &nbsp;<span>{currentBookmark.country}</span>
+                    </div>
                     <ReactCountryFlag svg countryCode={currentBookmark.countryCode} />
-                    &nbsp; <strong>{currentBookmark.cityName}</strong>  &nbsp;_  &nbsp;<span>{currentBookmark.country}</span>
-
                 </div>
 
             </div>

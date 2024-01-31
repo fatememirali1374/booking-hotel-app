@@ -1325,48 +1325,21 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
-      "id": 1
-    },
-    {
-      "cityName": "Mahidasht",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.32869425037187",
-      "longitude": "46.724183117022086",
-      "host_location": "Mahidasht Iran (Islamic Republic of)",
-      "id": 4
-    },
-    {
-      "cityName": "Amsterdam",
-      "country": "Netherlands (Kingdom of the)",
-      "countryCode": "NL",
-      "latitude": "52.34087232854124",
-      "longitude": "4.90332088642318",
-      "host_location": "Amsterdam Netherlands (Kingdom of the)",
-      "id": 5
-    },
-    {
-      "cityName": "Hrinova",
-      "country": "Slovakia",
-      "countryCode": "SK",
-      "latitude": "48.59194624298867",
-      "longitude": "19.60858304951715",
-      "host_location": "Hrinova Slovakia",
+      "cityName": "Zemes",
+      "country": "Romania",
+      "countryCode": "RO",
+      "latitude": "46.557046210353114",
+      "longitude": "26.428655526912266",
+      "host_location": "Zemes Romania",
       "id": 6
     },
     {
-      "cityName": "Qom",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.63285486368697",
-      "longitude": "50.85090956604001",
-      "host_location": "Qom Iran (Islamic Republic of)",
+      "cityName": "Gemeente Steenwijkerland",
+      "country": "Netherlands (Kingdom of the)",
+      "countryCode": "NL",
+      "latitude": "52.75862825119079",
+      "longitude": "5.934038500411646",
+      "host_location": "Gemeente Steenwijkerland Netherlands (Kingdom of the)",
       "id": 7
     }
   ]

@@ -45,8 +45,7 @@ function AddNewBookmark() {
             latitude: lat,
             longitude: lng,
             host_location: cityName + " " + country
-        }
-        console.log(newBookmar);
+        };
         await createBookmark(newBookmar)
         navigate("/bookmark")
     }

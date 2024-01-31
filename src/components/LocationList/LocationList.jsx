@@ -1,5 +1,7 @@
 
+import { Link } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
+
 
 function LocationList() {
  const{data, isLoading}  = useFetch("http://localhost:5000/hotels","")
@@ -10,7 +12,7 @@ function LocationList() {
     <div className="locationList">
     {
         data.map((item)=>{
-            return <div className="locationItem" key={item.id}>
+            return <Link to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`} className="locationItem" key={item.id}>
                 <img src={item.picture_url.url} alt={item.name} />
                 <div className='locationItemDesc'>
                     <p className="location">{item.smart_location}</p>
@@ -20,7 +22,7 @@ function LocationList() {
                     <span>night</span>
                     </p>
                 </div>
-            </div>
+            </Link>
         })
     }
     </div>
