@@ -6,7 +6,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { format } from "date-fns";
-import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { NavLink, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
     const [serchParams, setSearchParams] = useSearchParams();
@@ -51,6 +51,7 @@ function Header() {
     return (
         <div>
             <div className="header">
+               <NavLink to={"/bookmark"}>bookmark</NavLink>
                 <div className="headerSearch">
                     <div className="headerSearchItem">
                         <MdLocationOn className="headerIcon locationIcon" />
@@ -103,6 +104,7 @@ function Header() {
                         </button>
                     </div>
                 </div>
+                <NavLink to={"/login"}>Login</NavLink>
             </div>
         </div>
     )
