@@ -1,33 +1,33 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const AuthContext = createContext();
 
 const initialState = {
     user: null,
-    isAthenticated: false
+    isAuthenticated: false
 }
 
 const FAKE_USER={
     name:"fateme",
-    email:"fatememirali1374@gmail.com",
+    email:"User@gmail.com",
     password:"1111"
 }
 function authReduced(state, action) {
 switch(action.type){
 case "login": return{
     user: action.payload,
-    isAthenticated: true
+    isAuthenticated: true
 }
     case "logout":return{
         user: null,
-        isAthenticated: false
+        isAuthenticated: false
     }
     default:
         throw new Error("Unknown action!!!")
 }
  }
-export default function AuthContextProvider({ children }) {
-    const [{ user, isAthenticated }, dispatch] = useReducer(
+export default function AuthProvider({ children }) {
+    const [{ user, isAuthenticated }, dispatch] = useReducer(
         authReduced,
         initialState)
 
@@ -42,11 +42,15 @@ dispatch({type:"logout"})
     return <AuthContext.Provider
         value={{
             user,
-            isAthenticated,
+            isAuthenticated,
             login,
             logout
         }}
     >
         {children}
     </AuthContext.Provider>
+}
+
+export function useAuth(){
+    return useContext(AuthContext)
 }
